@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+
+
+
+        <script>
+            let user_id = "maulik"
+            let user_password = "123"
+            let user = "user"
+
+            let admin_id = "kaneriya"
+            let admin_password = "7744"
+            let admin = "admin"
+
+            const id = prompt("enter ID =")
+
+            if (id == user_id) {
+
+                const pass = prompt("enter password =")
+                if (pass == user_password) {
+
+                    const role = prompt("enter role =")
+                    if (role == user) {
+                        console.log("Hello User")
+                    }
+                    else {
+                        console.log("enter correct role");
+                    }
+                }
+                else {
+                    console.log("enter correct password");
+                }
+            }
+            else if (id == admin_id) {
+                const pass = prompt("enter password =")
+                if (pass == admin_password) {
+
+                    const role = prompt("enter role =")
+                    if (role == admin) {
+                        let sports = parseInt(prompt("choose number ="))
+
+                        switch(sports){
+
+                            case 1:
+                                console.log("volleyball");
+                                break;
+                            case 2:
+                                console.log("kabaddi");
+                                break;
+                            case 3:
+                                console.log("kho-kho")
+                                break;
+                            case 4:
+                                console.log("cricket");
+                                break;
+                            case 5:
+                                console.log("hockey");
+                                break;
+                            default:
+                                console.log("choose correct number");
+                        }
+                    }
+                    else {
+                        console.log("enter correct role");
+                    }
+                }
+                else {
+                    console.log("enter correct password");
+                }
+
+            }
+            else {
+                console.log("enter correct id");
+            }
+
+
+
+        </script>
+    </body>
+
+</html>

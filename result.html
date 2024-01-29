@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <script>
+            let user = "maulik"
+            let pass = "123"
+
+            const userid = prompt("enter your id")
+
+
+            if (userid == user) {
+                console.log("user right")
+
+                const password = prompt("enter your password")
+
+                if (password == pass) {
+                    console.log("login success")
+
+                    let maths = parseInt(prompt("enter marks"))
+                    let science = parseInt(prompt("enter marks"))
+                    let english = parseInt(prompt("enter marks"))
+                    let gujarati = parseInt(prompt("enter marks"))
+
+                    let avg =  (maths + science + english + gujarati)/4
+
+                    console.log("result = " , avg, "%")
+
+                    if(avg>80){
+                        console.log("grade, A")
+                    }
+                    else if(avg>60 && avg<=80){
+                        console.log("grade, B")
+                    }
+                    else if(avg>40 && avg<=60){
+                        console.log("grade, C");
+                    }
+                    else{
+                        console.log("FAIL");
+                    }
+                }
+                else {
+                    console.log("password invalid")
+                }
+
+            }
+            else {
+                console.log("invalid user id")
+            }
+
+
+
+
+        </script>
+    </body>
+
+</html>
