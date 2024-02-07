@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+
+        <script>
+
+            let arr = [12, 234, 4654, 57, 85, 436]
+
+            for (let i = 0; i <= arr.length; i++) {
+                for (let j = 0; j <= i; j++) {
+                    if (arr[i] < arr[j]) {
+                        let k = arr[i]
+                        arr[i] = arr[j]
+                        arr[j] = k
+                    }
+                }
+
+            }
+            console.log(arr);
+        </script>
+    </body>
+
+</html>
