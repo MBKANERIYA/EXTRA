@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+
+        <script>
+            let catagories = [
+
+                {
+                    type: "Shirt",
+                    brand: "WROGN",
+                    price: "799",
+                    available: true
+
+                },
+                {
+                    type: "T-shirt",
+                    brand: "WROGN",
+                    price: "349",
+                    available: false
+
+                },
+                {
+                    type: "Jeans",
+                    brand: "WROGN",
+                    price: "699",
+                    available: false
+
+                },
+                {
+                    type: "Trouser",
+                    brand: "WROGN",
+                    price: "899",
+                    available: true
+
+                },
+                {
+                    type: "Track-Pants",
+                    brand: "WROGN",
+                    price: "499",
+                    available: true
+
+
+                },
+                {
+                    type: "Shoes",
+                    brand: "WROGN",
+                    price: "1199",
+                    available: true
+
+                },
+
+            ]
+
+            let cart = catagories.filter((val) => val.available == true && val.price >= 399 && val.price <= 899)
+            console.log(cart);
+        </script>
+    </body>
+
+</html>
