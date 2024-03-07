@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        function Employee(name,salary){
+            let e_salary = salary;
+            let e_name = name;
+
+
+            let t_salary = () =>{
+                let bonus = salary*25/100;
+                let tax = salary*8/100;
+                let income = salary + bonus - tax;
+
+                return income
+            }
+
+            this.print = () =>{
+                console.log("employee name :-",name);
+                let ans = t_salary()
+                console.log("total salary in hand =",ans);
+            }
+            
+        }
+        let e1 = new Employee("bhagat",10000)
+        e1.print()
+        let e2 = new Employee("ashish",15000)
+        e2.print()
+        let e3 = new Employee("milan",12000)
+        e3.print()
+
+
+
+
+
+
+    </script>
+</body>
+</html>
