@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="text" name="name" id="name" />
+    <input type="number" name="age" id="age" />
+    <button onclick="addData()">Add</button>
+    <button onclick="clearData() ">Clear</button>
+    <button onclick="clr()">clr</button> <br /><br />
+
+    <table border="1" cellspacing="0" cellpadding="10px">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Remove</th>
+          <th>Update</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+      let lst = JSON.parse(localStorage.getItem("lst")) || [];
+      let tbody = document.getElementById("tbody");
+
+      //load data
+      let loadData = () => {
+
+        lst.map((val, ind) => {
+          let tr = document.createElement("tr");
+          tr.innerHTML = `
+                          <td>${val.name}</td>
+                          <td>${val.age}</td>
+                          <td><button onclick="removeData(${ind})">Delete</button></td>
+                          <td><button onclick="update(${ind})">update</button></td>
+                          `;
+          tbody.appendChild(tr);
+        });
+      };
+
+      //add data
+      let addData = () => {
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+
+        let data = {
+          name,
+          age,
+        };
+        lst.push(data);
+
+        localStorage.setItem("lst", JSON.stringify(lst));
+        location.reload();
+      };
+
+      let clearData = () => {
+        localStorage.clear();
+        location.reload();
+      };
+
+      let clr = () => {
+        tbody.remove()
+      }
+
+      function removeData(index) {
+        console.log(index);
+        let result = lst[index];
+        console.log(result);
+        let newlst = lst.filter((val) => val.age !== result.age);
+
+        localStorage.setItem("lst", JSON.stringify(newlst));
+        location.reload();
+      }
+
+      function update(index) {
+
+        
+        console.log(index);
+        let result = lst[index];
+        console.log(result);
+
+          let tr = document.createElement("tr");
+          tr.innerHTML = `
+                          <td><input type="text" name="name" id="name1" value="${result.name}" /></td>
+                          <td>    <input type="number" name="age" id="age1" value="${result.age}" /></td>
+                          <td><button onclick="removeData(${index})">Delete</button></td>
+                          <td><button onclick="setupdate(${index})">setupdata</button></td>
+                          `;
+          tbody.appendChild(tr);        
+      }
+
+      let setupdate = (index) => {
+
+        let name = document.getElementById("name1").value
+        let age = document.getElementById("age1").value
+        let data = {
+          name,
+          age,
+        };
+        lst[index] = data;
+        localStorage.setItem("lst", JSON.stringify(lst));
+        location.reload();
+      }
+      
+
+      loadData();
+    </script>
+
+
+  </body>
+
+</html>
