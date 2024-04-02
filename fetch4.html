@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<style>
+    a {
+        border: 1px solid black;
+        padding: 5px 15px;
+    }
+
+    div {
+        padding-bottom: 50px;
+    }
+</style>
+
+<body>
+
+    <div>
+        <a href="fetch1.html">fetch1</a>
+        <a href="fetch2.html">fetch2</a>
+        <a href="fetch3.html">fetch3</a>
+    </div>
+    <h1>FETCH-4</h1>
+
+    <table border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>title</td>
+            </tr>
+        </thead>
+        <tbody id="body"></tbody>
+    </table>
+
+
+    <script>
+
+
+        let tbody = document.getElementById("body");
+
+        let getdata = async () => {
+            let res = await fetch("https://jsonplaceholder.org/posts");
+            let result = await res.json();
+            console.log(result);
+
+            result.map((val, ind) => {
+                let tr = document.createElement("tr");
+                tr.innerHTML = `                         
+                            <td>${val.id}</td>
+                            <td>${val.title}</td>                      
+            `;
+                tbody.appendChild(tr);
+            })
+
+
+        }
+        getdata();
+
+
+
+    </script>
+
+
+</body>
+
+</html>
