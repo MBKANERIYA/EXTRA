@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <script>
+            let a = [12, 13, 14, 15, 17, 18, 19, 20]
+
+
+
+            // // addElement
+
+            // let value1 = 11;
+            // let ind1 = 0;
+
+            // for (let i = a.length - 1; i >= 0; i--) {
+
+            //     a[i + 1] = a[i]
+
+            //     if(i == ind1){
+            //         a[ind1] = value1;
+            //     }
+                
+            // }
+
+            let value2 = 16;
+            let ind2 = 5;
+            
+            for (let i = a.length - 1; i >= ind2; i--) {
+
+                a[i + 1] = a[i]
+
+                if (i == ind2) {
+                    a[ind2] = value2
+                }
+
+            }
+            
+            let last = 21;
+
+            a[a.length] = last
+
+            console.log(a);
+
+
+
+            // printElement
+
+            // for (let i = 0; i < a.length; i++) {
+            //     console.log(a[i]);
+            // }
+
+            // a.map((val, ind) => {
+            //     console.log(a[ind]);
+            // })
+
+
+
+            // removeElement
+
+            // let ind = 2 
+            // for(let i = ind; i<a.length-1; i++){
+                 
+            //     a[i] = a[i+1];
+            // }
+            // a.length = a.length-1
+            // console.log(a);
+        </script>
+
+    </body>
+
+</html>
