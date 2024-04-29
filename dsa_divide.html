@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            let a = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+            let b = [];
+            let c = [];
+            let d = [];
+            let mid;
+
+            if (a.length % 2 == 0) {
+                mid = (a.length) / 2
+            }
+            else {
+                mid = (a.length) / 2 + 0.5
+            }
+
+            for (let i = 0; i < mid; i++) {
+                b[i] = a[i]
+            }
+            console.log(b);
+
+            for (let i = mid; i < a.length; i++) {
+                c[i - mid] = a[i]
+            }
+            console.log(c);
+
+            for (let i = 0; i < b.length; i++) {
+                d[i] = b[i]
+            }
+            for (let i = 0; i < c.length; i++) {
+                d[i + b.length] = c[i]
+            }
+            console.log(d);
+        </script>
+    </body>
+
+</html>
