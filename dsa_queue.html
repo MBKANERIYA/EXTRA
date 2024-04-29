@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+
+            class queue {
+
+                constructor() {
+                    this.a = [];
+                    this.b = [];
+                    this.c = [];
+                    this.size = 5;
+                }
+
+                pushElement(element) {
+                    if (this.a.length < this.size) {
+                        this.a.push(element)
+                        console.log(this.a);
+                    }
+                    else {
+                        console.log("overflow");
+                    }
+                }
+                push2ndElement(element) {
+                    if (this.b.length < this.size) {
+                        this.b.push(element)
+                        console.log(this.b);
+                    }
+                    else {
+                        console.log("overflow");
+                    }
+                }
+                merge() {
+
+                    if (this.a.length == 0 || this.b.length == 0) {
+                        console.log("underflow");
+                    }
+                    else {
+                        for (let i = 0; i < this.a.length; i++) {
+                            this.c[i] = this.a[i]
+                        }
+                        for (let i = 0; i < this.b.length; i++) {
+                            this.c[i + this.a.length] = this.b[i]
+                        }
+                        console.log(this.c);
+                    }
+
+                }
+                add() {
+                    let ind = 0
+                    let val = 10
+                    for (let i = this.c.length - 1; i >= ind; i--) {
+
+                        this.c[i + 1] = this.c[i]
+
+                        if (i == ind) {
+                            this.c[ind] = val
+                        }
+
+                    }
+                    console.log(this.c);
+                }
+
+                remove() {
+
+                    for (let i = 0; i < this.c.length - 1; i++) {
+                        this.c[i] = this.c[i + 1];
+                    }
+                    this.c.length = this.c.length - 1
+
+                    console.log(this.c);
+                }
+
+            }
+
+
+
+            let q1 = new queue
+            q1.pushElement(11);
+            q1.pushElement(12);
+            q1.pushElement(13);
+            q1.pushElement(14);
+            q1.pushElement(15);
+            q1.pushElement(16);
+            q1.push2ndElement(16);
+            q1.push2ndElement(17);
+            q1.push2ndElement(18);
+            q1.push2ndElement(19);
+            q1.push2ndElement(20);
+            q1.push2ndElement(21);
+            q1.merge()
+            q1.add()
+            q1.remove()
+        </script>
+    </body>
+
+</html>
