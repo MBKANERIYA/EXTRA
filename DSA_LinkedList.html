@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+        class linklist {
+
+            constructor(data) {
+
+                this.head = {
+                    data: data,
+                    next: null
+                }
+                this.tail = this.head
+                this.size = 1
+            }
+            pushData(data) {
+
+                let addNode = {
+                    data: data,
+                    next: null
+                }
+                this.tail.next = addNode
+                this.tail = addNode
+                this.size = this.size + 1
+
+            }
+            removeData(index) {
+
+                let count = 1
+                let current = this.head
+                if (index === 1) {
+
+                    console.log("Head node cannot Remove");
+
+                } else {
+
+                    while (count < index - 1) {
+
+                        current = current.next
+                        count++
+
+                    }
+                    let nextnode = current.next.next
+                    current.next = nextnode
+                    this.size = this.size - 1
+
+                }
+
+            }
+
+        }
+
+        let l1 = new linklist(100)
+        l1.pushData(200)
+        l1.pushData(300)
+        l1.pushData(400)
+        l1.pushData(500)
+
+        // l1.removeData(1)
+        l1.removeData(2)
+        l1.removeData(3)
+
+        console.log(l1);
+
+
+    </script>
+</body>
+
+</html>
